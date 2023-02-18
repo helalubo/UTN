@@ -1,0 +1,74 @@
+.input-container {
+    display: flex;
+    justify-content: space-between;
+
+    fieldset {
+      margin: 20px;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid #0d3e67;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 0px 0 5px 0px;
+      border: 0;
+      border-radius: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+      background: rgba(255, 255, 255, 0.97);
+      color: #212121;
+      outline: 0;
+      appearance: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form-label {
+      fieldset {
+        position: relative;
+        &:first-child input {
+          border-radius: 4px 4px 0 0;
+        }
+        &:last-child input {
+          border-radius: 0 0 4px 4px;
+        }
+        & + fieldset {
+          border-top: 1px solid #ddd;
+        }
+      }
+      label {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        color: #909090;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    .form-css-label {
+      input {
+        &[data-empty="false"],
+      &:valid,
+    //   &:focus {
+    //     padding-top: 7px;
+    //   }
+      &:focus {
+          outline: 0;
+          background: rgba(255, 255, 255, 1);
+        }
+        &[data-empty="false"] + label,
+        &:valid + label,
+        &:focus + label {
+          color: #5856d6;
+          font-weight: 500;
+          top: -7px;
+          font-size: 12px;
+          transform: translate3d(0, -10px, 0);
+        }
+      }
+    }
+
+  }
